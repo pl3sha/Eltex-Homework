@@ -2,7 +2,7 @@
 
 void second_task(int num)
 {
-    int size = sizeof(num) * 8;
+    int size = sizeof(num) * 8; 
     
     printf("В двоичном виде: ");
     while (size > 0)
@@ -12,6 +12,7 @@ void second_task(int num)
     }
     printf("\n");
 }
+
 
 int main()
 {   

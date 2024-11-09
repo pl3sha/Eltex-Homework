@@ -20,12 +20,11 @@ void third_task(unsigned int num)
 
 int main()
 {   
-    int check;
-    unsigned int num;
+    int check, num;
     
     printf("Введите целое положительное число: ");
     check = scanf("%d", &num);
-    if (check != 1)
+    if ((check != 1) || (num < 0))
     {
         printf("Вы ввели не целое положительное число !\n");
         return -1;

@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-void first_task(unsigned int num)
+void first_task(int num)
 {
     int size = sizeof(num) * 8;
     
     printf("В двоичном виде: ");
     while (size > 0)
     {
-        printf("%u", num >> (size - 1) & 1);
+        printf("%d", num >> (size - 1) & 1);
         size--;
     }
     printf("\n");
@@ -15,12 +15,11 @@ void first_task(unsigned int num)
 
 int main()
 {   
-    int check;
-    unsigned int num;
+    int check, num;
     
     printf("Введите целое положительное число: ");
-    check = scanf("%u", &num);
-    if (check != 1)
+    check = scanf("%d", &num);
+    if ((check != 1) || (num < 0))
     {
         printf("Вы ввели не 'целое положительное число'\n");
         return -1;
