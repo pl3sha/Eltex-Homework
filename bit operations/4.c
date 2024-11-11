@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 void fourth_task(int num, int new_num)
 {
@@ -36,17 +37,19 @@ int main()
     
     printf("Введите целое положительное число: ");
     check = scanf("%d", &num);
-    if ((check != 1) || (num < 0))
+
+    if ((check != 1) || (num < 0) || (num > INT_MAX))
     {
-        printf("Нужно ввести положительное число'\n");
+        printf("Ошибка! Вы ввели не 'целое положительное число' или ввели слишком большое, макс: %d\n", INT_MAX);
         return -1;
     }
 
     printf("Введите целое число для замены (0-255): ");
     check = scanf("%d", &new_num);
+
     if ((check != 1) || !((new_num >= 0) && (new_num <= 255)))
     {
-        printf("Не правильно\n");
+        printf("Ошибка! Вы должны вести целое число в диапазоне (0-255)\n");
         return -1;
     }
     

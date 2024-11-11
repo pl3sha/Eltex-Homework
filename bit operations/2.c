@@ -1,7 +1,18 @@
 #include <stdio.h>
+#include <limits.h>
 
-void second_task(int num)
-{
+int main()
+{   
+    int check, num;
+    
+    printf("Введите целое отрицательное число число: ");
+    check = scanf("%d", &num);
+    if ((check != 1) || (num >= 0) || (num < INT_MIN))
+    {
+        printf("Вы ввели не 'целое отрицательное число' или слишком блольшое, макс: %d\n", INT_MIN);
+        return -1;
+    }
+
     int size = sizeof(num) * 8; 
     
     printf("В двоичном виде: ");
@@ -11,21 +22,6 @@ void second_task(int num)
         size--;
     }
     printf("\n");
-}
-
-
-int main()
-{   
-    int check, num;
-    
-    printf("Введите целое отрицательное число число: ");
-    check = scanf("%d", &num);
-    if ((num >= 0) || (check != 1))
-    {
-        printf("Вы ввели не 'целое отрицательное число'\n");
-        return -1;
-    }
-    second_task(num);
 
     return 0;
 }
