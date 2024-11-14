@@ -1,20 +1,22 @@
 #include <stdio.h>
 #include <limits.h>
 
-void third_task(unsigned int num)
-{
-
-}
-
 int main()
 {   
     int check, num, count = 0;
     
     printf("Введите целое положительное число: ");
     check = scanf("%d", &num);
-    if ((check != 1) || (num < 0) || (num > INT_MAX))
+
+    if ((check != 1))
     {
-        printf("Вы ввели не 'целое положительное число' или ввели слишком большое, макс: %d\n", INT_MAX);
+        printf("Вы ввели не 'целое положительное число'\n");
+        return -1;
+    }
+
+    if ((num < 0) || (num > INT_MAX))
+    {
+        printf("Вы вышли за допустимый диапазон (0 - %d)\n", INT_MAX);
         return -1;
     }
     

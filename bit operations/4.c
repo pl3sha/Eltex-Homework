@@ -31,25 +31,37 @@ void fourth_task(int num, int new_num)
 
 } 
 
-int main()
+int main() 
 {   
     int check, num, new_num;
     
     printf("Введите целое положительное число: ");
     check = scanf("%d", &num);
 
-    if ((check != 1) || (num < 0) || (num > INT_MAX))
+    if ((check != 1)) 
     {
-        printf("Ошибка! Вы ввели не 'целое положительное число' или ввели слишком большое, макс: %d\n", INT_MAX);
+        printf("Вы ввели не 'целое положительное число'\n");
         return -1;
     }
 
-    printf("Введите целое число для замены (0-255): ");
+    if ((num < 0) || (num > INT_MAX))
+    {
+        printf("Вы вышли за допустимый диапазон (0 - %d)\n", INT_MAX);
+        return -1;
+    }
+
+    printf("Введите новое значение для третьего байта (0-255): ");
     check = scanf("%d", &new_num);
 
-    if ((check != 1) || !((new_num >= 0) && (new_num <= 255)))
+    if ((check != 1))
     {
-        printf("Ошибка! Вы должны вести целое число в диапазоне (0-255)\n");
+        printf("Ошибка! Вы ввели не 'целое положительное число'\n");
+        return -1;
+    }
+
+    if (!((new_num >= 0) && (new_num <= 255)))
+    {
+        printf("Ошибка! Вы вышли за допустимый диапазон (0 - 255)\n");
         return -1;
     }
     
