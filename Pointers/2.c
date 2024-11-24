@@ -8,7 +8,7 @@ int main(void)
     float y = 6.0;
     printf("y = %f\n", y);
 
-    float *xp = &y; // <--- отредактированная строка
+    float *xp = &y; // <--- отредактированная строка, заменил х на у
     float *yp = &y;
     printf("Результат: %f\n", *xp + *yp);
 
