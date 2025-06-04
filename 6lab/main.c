@@ -2,8 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define SIZE 100
-
 typedef struct abonent {
     char name[10];
     char second_name[10];
