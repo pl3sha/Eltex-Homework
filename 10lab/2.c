@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 int main() {
   int pid1, pid2;
+  int status;
 
   pid1 = fork();
 
@@ -32,7 +34,8 @@ int main() {
       exit(0);
     }
 
-    wait();
+    wait(&status);
+    wait(&status);
     exit(0);
   }
 
@@ -54,11 +57,12 @@ int main() {
       exit(0);
     }
 
-    wait();
+    wait(&status);
     exit(0);
   }
 
-  wait();
+  wait(&status);
+  wait(&status);
 
   return 0;
 }

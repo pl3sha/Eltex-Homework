@@ -2,6 +2,7 @@
 
 int main() {
   char *command[50], path[25] = "/";
+  int status;
 
   while (1) {
     printf("> ");
@@ -38,7 +39,7 @@ int main() {
       exit(0);
     }
 
-    wait();
+    wait(&status);
   }
 
   return 0;
