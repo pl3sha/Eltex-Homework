@@ -17,7 +17,7 @@ void search_path(char *command, char *path) {
       strcpy(path, argument);
     } else if (strcmp(argument, "..") == 0 ||
                strstr(argument, "../") == argument) {
-      for (int i = 0; i < strlen(argument); i++)
+      for (size_t i = 0; i < strlen(argument); i++)
         if (argument[i] == '.' && argument[i + 1] == '.') {
           char *slash = strrchr(path, '/');
 

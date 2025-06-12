@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 int main() {
   char str[4];
   int fd[2];
+  int status;
 
   pipe(fd);
 
@@ -20,7 +22,7 @@ int main() {
   } else {
     close(fd[0]);
     write(fd[1], "Hi!", sizeof("Hi!"));
-    wait();
+    wait(&status);
   }
 
   return 0;

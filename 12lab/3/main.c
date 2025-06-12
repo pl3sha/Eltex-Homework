@@ -1,7 +1,10 @@
 #include "bash.h"
+#include <sys/wait.h>
+#include <string.h>
 
 int main() {
   char *command[10], *command2[10], path[25] = "/";
+  int status;
 
   while (1) {
     printf("> ");
@@ -54,7 +57,7 @@ int main() {
       }
     }
 
-    wait();
+    wait(&status);
   }
 
   return 0;
