@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#define SIZE 20
 
 int main() {
   FILE *file = fopen("output.txt", "w");
